@@ -1,6 +1,6 @@
 <div class="grid grid-cols-4 gap-4 p-2 bg-gray-100 mb-10">
     <!-- Admission Paper -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('admission') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-green-50">
             <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -10,7 +10,7 @@
         </div>
     </a>
   <!-- Class Routine -->
-  <a href="#" class="text-blue-500 hover:text-blue-700">
+  <a href="{{ route('routine') }}" class="text-blue-500 hover:text-blue-700">
     <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-green-100">
         <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
           <!-- Replace with an SVG or Icon -->
@@ -21,7 +21,7 @@
   </a>
     
     <!-- Result Sheet -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('result') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-indigo-200">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -30,9 +30,18 @@
             <p class="mt-3 text-sm md:text-xl lg:text-2xl text-black text-center"> রেজাল্ট সিট </p>
         </div>
     </a>
-   
+    <!-- Some information about coaching -->
+    <a href="{{ route('some.info') }}" class="text-blue-500 hover:text-blue-700">
+      <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-slate-200">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+            <!-- Replace with an SVG or Icon -->
+            <img src="{{ asset('frontend/images/about.png') }}" alt="Coaching Icon">
+          </div>
+          <p class="mt-3 text-sm md:text-xl lg:text-2xl text-black text-center"> কিছু তথ্য </p>
+      </div>
+    </a>
     <!-- Student Salary -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('pay') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-green-100">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -43,7 +52,7 @@
     </a>
     
     <!-- Notice Board Paper --> 
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('notice.board') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-yellow-100">
             <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -54,7 +63,7 @@
     </a>
   
     <!-- Regular Attendances -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('attendance') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-lime-200">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -63,17 +72,6 @@
             <p class="mt-3 text-sm md:text-xl lg:text-2xl text-black text-center"> দৈনিক হাজিরা  </p>
         </div>
     </a>
-    
-    <!-- Some information about coaching -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
-      <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-slate-200">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
-            <!-- Replace with an SVG or Icon -->
-            <img src="{{ asset('frontend/images/about.png') }}" alt="Coaching Icon">
-          </div>
-          <p class="mt-3 text-sm md:text-xl lg:text-2xl text-black text-center"> কিছু তথ্য </p>
-      </div>
-  </a>
  
   {{-- <!-- Guardian info -->
   <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md">
@@ -85,7 +83,7 @@
   </div> --}}
   
   <!-- Absent permission -->
-  <a href="#" class="text-blue-500 hover:text-blue-700">
+  <a href="{{ route('take.leave') }}" class="text-blue-500 hover:text-blue-700">
       <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-lime-200">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
             <!-- Replace with an SVG or Icon -->
@@ -96,7 +94,7 @@
   </a>
   
     <!-- CV of teacher -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('teacher.cv') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-fuchsia-200">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -107,7 +105,7 @@
     </a>
    
     <!-- Contacts -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('contact') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-blue-200">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -118,18 +116,18 @@
     </a>
   
     <!-- Students information -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('students.info') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-gray-300">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
               <img src="{{ asset('frontend/images/students_info.png') }}" alt="Students info Icon">
             </div>
-            <p class="mt-3 text-sm md:text-xl lg:text-2xl text-black text-center"> শিক্ষারথী তথ্য  </p>
+            <p class="mt-3 text-sm md:text-xl lg:text-2xl text-black text-center"> শিক্ষার্থীদের তথ্য  </p>
           </div>
     </a>
     
     <!-- Some roles about coaching -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('some.warning') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-yellow-100">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -139,7 +137,7 @@
         </div>
     </a>
     <!-- Coaching Address -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('address') }}" class="text-blue-500 hover:text-blue-700">
       <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md">
           <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
             <!-- Replace with an SVG or Icon -->
@@ -150,7 +148,7 @@
   </a>
   
   <!-- Homework -->
-  <a href="#" class="text-blue-500 hover:text-blue-700">
+  <a href="{{ route('home.work') }}" class="text-blue-500 hover:text-blue-700">
       <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-teal-200">
           <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
             <!-- Replace with an SVG or Icon -->
@@ -161,7 +159,7 @@
   </a>
 
     <!-- Some memories of coaching past -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('memorize') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-red-300">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->
@@ -171,7 +169,7 @@
         </div>
     </a>
     <!--ETC -->
-    <a href="#" class="text-blue-500 hover:text-blue-700">
+    <a href="{{ route('etc') }}" class="text-blue-500 hover:text-blue-700">
         <div class="flex flex-col items-center bg-white shadow-md p-2 rounded-md hover:bg-red-300">
             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
               <!-- Replace with an SVG or Icon -->

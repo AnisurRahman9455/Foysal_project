@@ -8,7 +8,7 @@
      </a>
    </div>
    <div class="w-2/12 px-2 mt-1">
-     <a href="https://madrasahedayatulummahdhaka.xyz/contact" class="text-decoration-none link">
+     <a href="{{ route('contact') }}" class="text-decoration-none link">
       <div class="home-box flex flex-col items-center justify-center text-center">
         <i class="fa-solid fa-address-book text-lg"></i>
         {{-- <p class="text-lg md:text-xl lg:text-2xl text-center"> যোগাযোগ </p> --}}
@@ -16,7 +16,7 @@
      </a>
    </div>
    <div class="w-2/12 px-2">
-     <a href="https://madrasahedayatulummahdhaka.xyz/pay" class="text-decoration-none link">
+     <a href="{{ route('pay') }}" class="text-decoration-none link">
        <div class="home-box flex flex-col items-center justify-center text-center">
          <img
            src="{{ asset('frontend/images/profile/round_payment.png') }}"
@@ -28,7 +28,7 @@
      </a>
    </div>
    <div class="w-2/12 px-2 mt-1">
-     <a href="https://madrasahedayatulummahdhaka.xyz/admission" class="text-decoration-none link">
+     <a href="{{ route('admission') }}" class="text-decoration-none link">
        <div class="home-box text-center">
          <i class="fa-solid fa-pen-to-square text-lg"></i>
          {{-- <p class="text-lg md:text-xl lg:text-2xl text-center">ভর্তি</p> --}}
