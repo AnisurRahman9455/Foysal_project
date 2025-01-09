@@ -12,27 +12,28 @@
     <div class="py-12 flex items-center justify-center min-h-screen" style="font-family: 'Lora', serif;">
         <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
             <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Student Registration Form</h1>
-            <form action="#" method="POST">
+            <form action="{{ route('student.store') }}" method="POST">
+              @csrf
               <!-- Personal Information -->
               <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Student Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" id="name" name="name" placeholder="Enter your full name" value="{{ old('name') }}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required >
               </div>
               <div class="mb-4">
                 <label for="father_name" class="block text-sm font-medium text-gray-700">Father's Name</label>
-                <input type="text" id="father_name" name="father_name" placeholder="Enter your father's name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" id="father_name" name="father_name" value="{{ old('father_name') }}" placeholder="Enter your father's name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required >
               </div>
               <div class="mb-4">
                 <label for="mother_name" class="block text-sm font-medium text-gray-700">Mother's Name</label>
-                <input type="text" id="mother_name" name="mother_name" placeholder="Enter your mother's name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" id="mother_name" name="mother_name" value="{{ old('mother_name') }}"  placeholder="Enter your mother's name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
               </div>
               <div class="mb-4">
                 <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth</label>
-                <input type="date" id="dob" name="dob" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="date" id="dob" name="dob" value="{{ old('dob') }}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
               </div>
               <div class="mb-4">
                 <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
-                <select id="gender" name="gender" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <select id="gender" name="gender" value="{{ old('gender') }}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
@@ -40,13 +41,13 @@
               </div>
               <div class="mb-4">
                 <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="Enter your phone number" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
               </div>
         
               <!-- Educational Information -->
               <div class="mb-4">
                 <label for="class" class="block text-sm font-medium text-gray-700">Current Class</label>
-                <select id="class" name="class" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <select id="class" name="class" value="{{ old('class') }}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
                   <option value="six">Class 6</option>
                   <option value="seven">Class 7</option>
                   <option value="eight">Class 8</option>
@@ -56,17 +57,11 @@
               </div>
               <div class="mb-4">
                 <label for="school" class="block text-sm font-medium text-gray-700">School Name</label>
-                <input type="text" id="school" name="school" placeholder="Enter your school name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" id="school" name="school" value="{{ old('school') }}" placeholder="Enter your school name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required >
               </div>
               <div class="mb-4">
                 <label for="subjects" class="block text-sm font-medium text-gray-700">Subjects to Study</label>
-                <input type="text" id="subjects" name="subjects" placeholder="e.g., Math, English, Chemistry" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-              </div>
-        
-              <!-- File Upload -->
-              <div class="mb-4">
-                <label for="photo" class="block text-sm font-medium text-gray-700">Upload Photo</label>
-                <input type="file" id="photo" name="photo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" id="subjects" value="{{ old('subjects') }}" name="subjects" placeholder="e.g., Math, English, Chemistry" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
               </div>
         
               <!-- Submit Button -->

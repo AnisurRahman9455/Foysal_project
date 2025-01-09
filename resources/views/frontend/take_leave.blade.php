@@ -2,7 +2,8 @@
     <section>
         <div class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">ছুটির আবেদন ফরম</h2>
-            <form action="#" method="POST">
+            <form action="{{ route('leave-application.store') }}" method="POST">
+              @csrf
               <!-- Name Field -->
               <div class="mb-4">
                 <label for="name" class="block text-lg font-medium text-gray-700">শিক্ষার্থীর নাম</label>

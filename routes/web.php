@@ -34,30 +34,33 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 // My Own Routes 
-Route::get('admission',[admissionController::class,'index'])->name('admission');
-Route::get('address',[addressController::class,'index'])->name('address');
-Route::get('attendance',[attendanceController::class,'index'])->name('attendance');
-Route::get('routine',[classRoutineController::class,'index'])->name('routine');
-Route::get('contact',[contactController::class,'index'])->name('contact');
-Route::get('etc',[etcController::class,'index'])->name('etc');
-Route::get('home-work',[homeWorkController::class,'index'])->name('home.work');
-Route::get('memorize',[memorizeController::class,'index'])->name('memorize');
-Route::get('notice-board',[noticeBoardController::class,'index'])->name('notice.board');
-Route::get('pay',[payController::class,'index'])->name('pay');
+Route::get('/admission',[admissionController::class,'index'])->name('admission');
+Route::post('/student-form', [admissionController::class, 'store'])->name('student.store');
+Route::get('/address',[addressController::class,'index'])->name('address');
+Route::get('/attendance',[attendanceController::class,'index'])->name('attendance');
+Route::get('/routine',[classRoutineController::class,'index'])->name('routine');
+Route::get('/contact',[contactController::class,'index'])->name('contact');
+Route::get('/etc',[etcController::class,'index'])->name('etc');
+Route::get('/home-work',[homeWorkController::class,'index'])->name('home.work');
+Route::get('/memorize',[memorizeController::class,'index'])->name('memorize');
+Route::get('/notice-board',[noticeBoardController::class,'index'])->name('notice.board');
+Route::get('/pay',[payController::class,'index'])->name('pay');
+Route::post('/submit-payment', [payController::class, 'store'])->name('submit.payment');
 //Return to all result sheet from here
 
-Route::get('result',[resultSheetController::class,'index'])->name('result');
-Route::get('six',[returnAllResultController::class,'six'])->name('six');
-Route::get('seven',[returnAllResultController::class,'seven'])->name('seven');
-Route::get('eight',[returnAllResultController::class,'eight'])->name('eight');
-Route::get('nine',[returnAllResultController::class,'nine'])->name('nine');
-Route::get('ten',[returnAllResultController::class,'ten'])->name('ten');
+Route::get('/result',[resultSheetController::class,'index'])->name('result');
+Route::get('/six',[returnAllResultController::class,'six'])->name('six');
+Route::get('/seven',[returnAllResultController::class,'seven'])->name('seven');
+Route::get('/eight',[returnAllResultController::class,'eight'])->name('eight');
+Route::get('/nine',[returnAllResultController::class,'nine'])->name('nine');
+Route::get('/ten',[returnAllResultController::class,'ten'])->name('ten');
 
 // result sheet end here
-Route::get('some-info',[someInfoController::class,'index'])->name('some.info');
-Route::get('some-warning',[someWarningController::class,'index'])->name('some.warning');
-Route::get('students-info',[studentsInfoController::class,'index'])->name('students.info');
-Route::get('take-leave',[takeLeaveController::class,'index'])->name('take.leave');
-Route::get('teacher-cv',[teacherCVController::class,'index'])->name('teacher.cv');
+Route::get('/some-info',[someInfoController::class,'index'])->name('some.info');
+Route::get('/some-warning',[someWarningController::class,'index'])->name('some.warning');
+Route::get('/students-info',[studentsInfoController::class,'index'])->name('students.info');
+Route::get('/take-leave',[takeLeaveController::class,'index'])->name('take.leave');
+Route::post('/leave-application', [takeLeaveController::class, 'store'])->name('leave-application.store');
+Route::get('/teacher-cv',[teacherCVController::class,'index'])->name('teacher.cv');
 
 require __DIR__.'/auth.php';

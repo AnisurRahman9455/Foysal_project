@@ -34,5 +34,6 @@
                 @include('frontend.components.footer_nav')
             </footer>
         </div>
+        @include('layouts.java_script')
     </body>
 </html>

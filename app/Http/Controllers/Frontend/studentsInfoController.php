@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Payment;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class studentsInfoController extends Controller
 {
     public function index(){
-        return view('frontend.students_info');
+        $Payments = Payment::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        $StudentsInfo = Student::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        return view('frontend.students_info', compact('Payments','StudentsInfo'));
     }
 }

@@ -17,7 +17,8 @@
                 01741-257011
             </h1>
             <section>
-                <form action="#" method="POST" class="space-y-4">
+              <form action="{{ route('submit.payment') }}" method="POST" class="space-y-4">
+                @csrf
                     <!-- Student Name -->
                     <div>
                       <label for="studentName" class="block text-lg font-medium text-gray-700">শিক্ষার্থীর নাম</label>
