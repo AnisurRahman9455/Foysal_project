@@ -9,7 +9,7 @@
         <div class="flex justify-center items-center bg-gray-100">
           <div class="w-full max-w-4xl aspect-w-16 aspect-h-9">
             <iframe 
-              src="https://drive.google.com/file/d/1S25CQdoDWh6XvDtk7puUJs9sUnRa3d1r/preview" 
+              src="https://drive.google.com/file/d/1p0F7hlaICCnPCssKIjG05Mx6m0x164eo/preview" 
               class="w-full h-full rounded-md border border-gray-300"
               allow="autoplay">
             </iframe>

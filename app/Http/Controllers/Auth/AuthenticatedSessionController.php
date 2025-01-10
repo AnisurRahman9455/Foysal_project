@@ -16,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        return view ('auth.login');
     }
 
     /**
@@ -28,8 +28,21 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        $url = "student/dashboard";
+        if($request->user()->role === 'admin'){
+           $url = "/admin/dashboard";
+        }
+        else if($request->user()->role === 'teacher'){
+            $url = "/teacher/dashboard";
+         }
+         else if($request->user()->role === 'parent'){
+            $url = "/parent/dashboard";
+         }
+
+        return redirect()->intended($url);
     }
+
+
 
     /**
      * Destroy an authenticated session.

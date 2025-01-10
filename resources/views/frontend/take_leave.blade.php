@@ -7,13 +7,15 @@
               <!-- Name Field -->
               <div class="mb-4">
                 <label for="name" class="block text-lg font-medium text-gray-700">শিক্ষার্থীর নাম</label>
-                <input type="text" id="name" name="name" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200" placeholder="আপনার নাম লিখুন">
+                <input type="text" id="name" name="name" value="{{ old('name') }}" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200" placeholder="আপনার নাম লিখুন">
               </div>
-        
+              @error('name')
+                  <div class="text-red-700">{{ $message }}</div>
+              @enderror
               <!-- Class Selection -->
               <div class="mb-4">
                 <label for="class" class="block text-lg font-medium text-gray-700">শ্রেণি</label>
-                <select id="class" name="class" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200">
+                <select id="class" name="class" value="{{ old('class') }}" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200">
                   <option value="">শ্রেণি নির্বাচন করুন</option>
                   <option value="6">ষষ্ঠ</option>
                   <option value="7">সপ্তম</option>
@@ -22,25 +24,36 @@
                   <option value="10">দশম</option>
                 </select>
               </div>
-        
+              @error('class')
+                  <div class="text-red-700">{{ $message }}</div>
+              @enderror
+
               <!-- Leave Start Date -->
               <div class="mb-4">
                 <label for="start_date" class="block text-lg font-medium text-gray-700">ছুটির শুরুর তারিখ</label>
-                <input type="date" id="start_date" name="start_date" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200">
+                <input type="date" id="start_date" value="{{ old('start_date') }}" name="start_date" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200">
               </div>
-        
+              @error('start_date')
+                  <div class="text-red-700">{{ $message }}</div>
+              @enderror
+
               <!-- Leave End Date -->
               <div class="mb-4">
                 <label for="end_date" class="block text-lg font-medium text-gray-700">ছুটির শেষ তারিখ</label>
-                <input type="date" id="end_date" name="end_date" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200">
+                <input type="date" id="end_date" value="{{ old('end_date') }}" name="end_date" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200">
               </div>
-        
+              @error('end_date')
+                  <div class="text-red-700">{{ $message }}</div>
+              @enderror
               <!-- Reason -->
               <div class="mb-4">
                 <label for="reason" class="block text-lg font-medium text-gray-700">ছুটির কারণ</label>
-                <textarea id="reason" name="reason" rows="4" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200" placeholder="ছুটির কারণ লিখুন"></textarea>
+                <textarea id="reason" name="reason" rows="4" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200" placeholder="ছুটির কারণ লিখুন">{{ old('reason') }}</textarea>
               </div>
-        
+              @error('reason')
+                  <div class="text-red-700">{{ $message }}</div>
+              @enderror
+              
               <!-- Submit Button -->
               <div class="text-center">
                 <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-300">

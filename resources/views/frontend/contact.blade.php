@@ -28,48 +28,51 @@
       </div>
 
       <!-- ফর্ম -->
-      <form class="space-y-4" action="YOUR_BACKEND_ENDPOINT" method="POST">
+      <form class="space-y-4" action="{{ route('submit.message') }}" method="POST">
+        @csrf
         <div>
-          <label for="name" class="block text-lg md:text-xl lg:text-2xl font-medium text-gray-700">আপনার নাম</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            placeholder="আপনার নাম লিখুন"
-            required
-          />
+            <label for="name" class="block text-lg md:text-xl lg:text-2xl font-medium text-gray-700">আপনার নাম</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="আপনার নাম লিখুন"
+                required
+            />
         </div>
         <div>
-          <label for="email" class="block text-lg md:text-xl lg:text-2xl font-medium text-gray-700">আপনার ইমেইল</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            placeholder="আপনার ইমেইল লিখুন"
-            required
-          />
+            <label for="email" class="block text-lg md:text-xl lg:text-2xl font-medium text-gray-700">আপনার ইমেইল</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="আপনার ইমেইল লিখুন"
+                required
+            />
         </div>
         <div>
-          <label for="message" class="block text-lg md:text-xl lg:text-2xl font-medium text-gray-700">মেসেজ</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            placeholder="আপনার মেসেজ লিখুন..."
-            required
-          ></textarea>
+            <label for="message" class="block text-lg md:text-xl lg:text-2xl font-medium text-gray-700">মেসেজ</label>
+            <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="আপনার মেসেজ লিখুন..."
+                required
+            ></textarea>
         </div>
         <button
-          type="submit"
-          class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            type="submit"
+            class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          মেসেজ পাঠান
+            মেসেজ পাঠান
         </button>
-      </form>
+    </form>
+    
     </div>
   </div>
     </div>
+ 
 </x-app-layout>
