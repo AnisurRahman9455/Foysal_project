@@ -16,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view ('auth.login');
+        return view('auth.login');
     }
 
     /**
@@ -25,24 +25,24 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        $url = "student/dashboard";
-        if($request->user()->role === 'admin'){
-           $url = "/admin/dashboard";
-        }
-        else if($request->user()->role === 'teacher'){
-            $url = "/teacher/dashboard";
-         }
-         else if($request->user()->role === 'parent'){
-            $url = "/parent/dashboard";
-         }
+        // Role-based redirection
+        $roleRoutes = [
+            'admin' => '/admin/dashboard',
+            'teacher' => '/teacher/dashboard',
+            'parent' => '/parent/dashboard',
+            'student' => '/student/dashboard',
+        ];
+
+        $role = $request->user()->role;
+        $url = $roleRoutes[$role] ?? '/dashboard'; // Default to '/dashboard' if role doesn't match
+
+        // Flash welcome message
+        session()->flash('welcome_message', "{$request->user()->name}");
 
         return redirect()->intended($url);
     }
-
-
 
     /**
      * Destroy an authenticated session.
@@ -52,7 +52,6 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');

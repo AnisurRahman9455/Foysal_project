@@ -14,7 +14,8 @@
                 <img src="{{ asset('frontend/images/paymenticon/rocket.png') }}" alt="Rocket" class="w-8 h-8 rounded-full">
             </div>
             <h1 class="text-2xl text-red-500 text-center">
-                01741-257011
+              Bkask : 01629676568 <br>
+              Nagod :01741257011
             </h1>
             <section>
               <form action="{{ route('submit.payment') }}" method="POST" class="space-y-4">
