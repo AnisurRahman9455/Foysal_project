@@ -36,7 +36,7 @@ class AuthenticatedSessionController extends Controller
         ];
 
         $role = $request->user()->role;
-        $url = $roleRoutes[$role] ?? '/dashboard'; // Default to '/dashboard' if role doesn't match
+        $url = $roleRoutes[$role] ?? '/student/dashboard'; // Default to '/dashboard' if role doesn't match
 
         // Flash welcome message
         session()->flash('welcome_message', "{$request->user()->name}");
